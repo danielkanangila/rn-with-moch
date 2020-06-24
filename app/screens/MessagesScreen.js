@@ -24,7 +24,8 @@ const initialMessages = [
   {
     id: 3,
     title: "Text3",
-    description: "Description",
+    description:
+      "This library provides an API that exposes mobile platform specific native capabilities of touch & gesture handling and recognition. It allows for defining complex gesture handling and recognition logic that runs 100% in native thread and is therefore deterministic",
     image: require("../assets/mosh.jpg"),
   },
 ];
@@ -58,6 +59,7 @@ const MessagesScreen = () => {
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
+            showChevron
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
