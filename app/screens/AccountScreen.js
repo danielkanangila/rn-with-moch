@@ -20,13 +20,14 @@ const menuItems = [
       name: "email",
       backgroundColor: colors.secondary,
     },
+    targetScreen: "Messages",
   },
 ];
 
-const AccountScreen = () => {
+const AccountScreen = ({ navigation }) => {
   return (
     <Screen style={styles.screen}>
-      <View style={styles.container}>
+      <View>
         <ListItem
           title="Mosh Hamedani"
           description="programmingwithmosh@gmail.com"
@@ -42,6 +43,8 @@ const AccountScreen = () => {
             <ListItem
               title={item.title}
               IconComponent={<Icon {...item.icon} />}
+              showChevron
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
@@ -49,6 +52,7 @@ const AccountScreen = () => {
       <ListItem
         title="Logout"
         IconComponent={<Icon name="logout" backgroundColor={colors.yellow} />}
+        showChevron
       />
     </Screen>
   );
@@ -57,6 +61,7 @@ const AccountScreen = () => {
 const styles = StyleSheet.create({
   screen: {
     backgroundColor: colors.light,
+    paddingTop: 5,
   },
   container: {
     marginVertical: 20,
